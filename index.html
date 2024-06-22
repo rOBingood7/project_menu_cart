@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .container {
+            width: 70%;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <center>
+        <button class="all">show all</button>
+        <button class="five">show five</button>
+        <button class="menu">menu</button>
+    </center>
+
+    <center>
+        <div class="modal">
+            <div class="modal__dialog">
+                <div class="modal__content">
+                    
+                        <div data-close class="modal__close">&times;</div>
+                        <table>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <td>Cozy Blanket</td>
+                                <td>
+                                    <div class="header">
+                                        <button class="decrease">-</button>
+                                        <input type="text" id="quantity" value="1">
+                                        <button class="increase">+</button>
+                                    </div>
+                                </td>
+                                <td>$29.99</td>
+                                <td>
+                                    <button class="remove" onclick="removeItem()">Remove</button>
+                                </td>
+                            </tr>
+                        </table>
+                    
+                </div>
+            </div>
+        </div>
+    </center>
+
+    <div class="container">
+
+    </div>
+
+
+
+    <script src="./components/db.js"></script>
+    <script src="./components/Item.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
