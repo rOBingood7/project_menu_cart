@@ -3,200 +3,214 @@
 	margin: 0px;
 	box-sizing: border-box;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-		sans-serif;
-}
-
-.mens_clothes {
+	  Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+	  sans-serif;
+  }
+  
+  .mens_clothes {
 	width: 100%;
 	border: 1px solid black;
-
+  
 	.bag {
-		display: flex;
-		justify-content: center;
-		padding: 20px;
-		img {
-			object-fit: contain;
-			width: 100%;
-			height: 200px;
-		}
+	  display: flex;
+	  justify-content: center;
+	  padding: 20px;
+	  img {
+		object-fit: contain;
+		width: 100%;
+		height: 200px;
+	  }
 	}
-
+  
 	.clothing {
+	  display: flex;
+	  flex-direction: column;
+	  gap: 20px;
+	  background-color: #000000;
+	  padding: 20px;
+  
+	  .men_clothing {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 29.4px;
+		color: #ffffff;
+  
+		/* .truncate { */
+		  width: 250px;
+		  white-space: nowrap;
+		  overflow: hidden;
+		  text-overflow: ellipsis;
+		/* } */
+	  }
+  
+	  .perfect {
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 17.15px;
+		color: #ffffff;
+	  }
+  
+	  .prices {
+		display: flex;
+		align-items: center;
+		gap: 40px;
+		.price span {
+		  margin-right: 15px;
+		  margin-left: 5px;
+		}
+  
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 29.11px;
+		color: whi
+	  }
+  
+	  button {
+		border: 1px solid #000000;
+		border-radius: 10px;
+		background-color: white;
+		width: 100%;
+		height: 55px;
+		cursor: pointer;
+  
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 22.05px;
+		text-align: center;
+  
+		&:hover {
+		  color: white;
+		  background: #1F86FF;
+		}
+  
+	  }
+	}
+  }
+  
+  
+  
+  aside {
+	position: fixed;
+	top: 0px;
+	right: -100%;
+	bottom: 0px;
+	background-color: grey;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 40%;
+  
+	.info {
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	}
+  
+	.list {
+	  width: 100%;
+	  height: 70%;
+	  position: relative;
+	  
+  
+	  &::after {
+		content:  "";
+		display: block;
+		width: 100%;
+		height: 140px;
+		background: linear-gradient(transparent, grey);
+		position: absolute;
+		bottom: 0px;
+	  }
+	  .scrollable-list {
 		display: flex;
 		flex-direction: column;
-		gap: 20px;
-		background-color: #000000;
-		padding: 20px;
-
-		.men_clothing {
-			font-size: 24px;
-			font-weight: 600;
-			line-height: 29.4px;
-			color: #ffffff;
-
-			/* .truncate { */
-				width: 250px;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-			/* } */
+		gap: 12px;
+		/* overflow-y: scroll; */
+		max-height: 100%;
+  
+		.item {
+		  padding: 0 20px;
+		  width: 100%;
+		  min-height: 100px;
+		  background: white;
+		  border: #000000 solid 2px;
+		  border-radius: 10px;
 		}
-
-		.perfect {
-			font-size: 14px;
-			font-weight: 600;
-			line-height: 17.15px;
-			color: #ffffff;
-		}
-
-		.prices {
-			display: flex;
-			align-items: center;
-			gap: 40px;
-			.price span {
-				margin-right: 15px;
-				margin-left: 5px;
-			}
-
-			font-size: 24px;
-			font-weight: 500;
-			line-height: 29.11px;
-			color: #ffffff;
-		}
-
-		button {
-			border: 1px solid #000000;
-			border-radius: 10px;
-			background-color: white;
-			width: 100%;
-			height: 55px;
-			cursor: pointer;
-
-			font-size: 18px;
-			font-weight: 600;
-			line-height: 22.05px;
-			text-align: center;
-
-			&:hover {
-				color: white;
-				background: #1F86FF;
-			}
-
-		}
+	  }
+  
 	}
-}
-
-
-.modal {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1050;
-	display: none;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	background-color: rgba(0, 0, 0, 0.5);
-}
-.modal__dialog {
-	max-width: 1160px;
-	margin: 40px auto;
-}
-.modal__content {
-	position: relative;
-	width: 100%;
-	padding: 40px;
-	background-color: #fff;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	border-radius: 4px;
-	max-height: 80vh;
-	overflow-y: auto;
-}
-.modal__close {
-	position: absolute;
-	top: 8px;
-	right: 14px;
-	font-size: 30px;
-	color: #000;
-	opacity: 0.5;
-	font-weight: 700;
-	border: none;
-	background-color: transparent;
-	cursor: pointer;
-}
-.modal__title {
-	text-align: center;
-	font-size: 22px;
-	text-transform: uppercase;
-}
-.modal__input {
-	display: block;
-	margin: 20px auto 20px auto;
-	width: 280px;
-	height: 50px;
-	background: #fff;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-	border: none;
-	font-size: 18px;
-	text-align: center;
-	padding: 0 20px;
-	outline: 0;
-}
-.modal .btn {
-	display: block;
-	width: 280px;
-	margin: 0 auto;
-}
-.show {
-	display: block;
-}
-.hide {
-	display: none;
-}
-.fade {
-	animation-name: fade;
-	animation-duration: 1s;
-}
-@keyframes fade {
-	from {
-		opacity: 0.1;
+  
+	.show_total {
+	  width: 100%;
+	  height: 30%;
+	  background-color: white;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-around;
+	  border-radius: 14px;
+	  padding: 20px;
+  
+  
 	}
-	to {
-		opacity: 1;
-	}
-}
-
-
-table {
-	width: 100%;
-}
-th, td {
-	padding: 10px;
-	border-bottom: 1px solid #ddd;
-}
-th {
-	background-color: white;
-	text-align: left;
-}
-.header {
+  }
+  
+  
+  .head {
+	justify-content: center;
 	display: flex;
 	align-items: center;
-	
-}
-.header button {
+  }
+  .menu_item {
+	display: flex;
+	justify-content: space-between;
+  }
+  
+  .menu_left {
+	display: flex;
+	gap: 50px;
+	align-items: center;
+  }
+  .menu_right {
+	display: grid;
+  
+  }
+  
+  .img {
+	background-image: url("https://avatars.mds.yandex.net/i?id=2c1ade9ecf7c95af43dfcab8b91ef1c0-5480282-images-thumbs&n=13") ;
+	background-repeat: no-repeat;
+	background-size: cover  ;
+	width: 50px;
+	height: 50px;
+  }
+  .remove_btn, .close {
+	border-radius: 10px;
+	padding: 5px;
+	background-color: #f2f2f2;
+	cursor: pointer;
+  }
+
+  .decrease, .increase  {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: #f2f2f2;
 	border: none;
 	cursor: pointer;
-	padding: 5px 10px;
+	padding: 5px;
+	width: 30px;
+	height: 20px;
 }
-.header input {
-	width: 40px;
+
+
+.btns_inp {
+	width: 80px;
 	text-align: center;
 }
-.remove-button {
-	background-color: #f2f2f2;
-	border: none;
-	cursor: pointer;
-	padding: 5px 10px;
+
+.btns {
+	gap: 10px;
+	display: flex;
+	align-items: center;
 }

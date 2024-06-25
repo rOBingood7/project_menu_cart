@@ -26,29 +26,25 @@ all.onclick = () => {
 }
 
 
-const open_btn = document.querySelector('.menu')
-const close_btn = document.querySelector('[data-close]')
-const modal = document.querySelector('.modal')
 
+const menu = document.querySelector('aside')
+const menu_open_btn = document.querySelector('#menu')
+const menu_close_btn = document.querySelector('#close')
 
+menu_open_btn.onclick = () => {
+    menu.style.right="0px"
 
-open_btn.onclick = () => {
-        modal.classList.add('show', 'fade')
-    }
-
-close_btn.onclick = () => {
-    modal.classList.remove('show')
 }
 
+menu_close_btn.onclick = () => {
+    menu.style.right="-100%"
 
+}
 
-
-
-
-const quantInp = document.querySelector('#quantity')
+const quantInp = document.querySelector('.btns_inp')
 const decreaseBtn = document.querySelector('.decrease')
 const increaseBtn = document.querySelector('.increase')
-const removeBtn = document.querySelector('.remove')
+const removeBtn = document.querySelector('.remove_btn')
 
 decreaseBtn.onclick = () => {
     let current = +(quantInp.value);
@@ -66,4 +62,3 @@ increaseBtn.onclick = () => {
 removeBtn.onclick = () => {
     alert('Item removed');
 };
-
