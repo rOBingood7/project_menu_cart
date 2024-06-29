@@ -10,61 +10,63 @@
             width: 70%;
             margin: 40px auto;
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+        }
+
+        table {
+            width: 70%;
+            margin: 50px auto;
+
+            tr {
+                background-color: #c4c4c4;
+
+                th,
+                td {
+                    padding: 10px;
+                    text-align: start;
+                }
+            }
         }
     </style>
     <title>Document</title>
 </head>
 
 <body>
-    
+
     <center>
-        <button class="all">show all</button>
-        <button class="five">show five</button>
-        <button id="menu">menu</button>
+        <h1>В корзине <span id="total_cart" >0</span> товаров</h1>
+        <div>
+            <button id="one">show all</button>
+            <button id="two">show five</button>
+            <button id="menu">menu</button>
+        </div>
     </center>
 
     <aside>
         <div class="info">
             <span>Cart</span>
-            <button id="close" class="close">close</button>
+            <button id="close">close</button>
         </div>
+
+
         <div class="list">
             <div class="scrollable-list">
-                <!-- <div class="item">
-                    <h1 class="head">Cozy socks</h1>
-                    <div class="menu_item">
-                       <div class="menu_left">
-                        <div class="img"></div>
-                        <div class="btns">
-                            <button class="decrease">-</button>
-                            <input class="btns_inp" type="text" value="1">
-                            <button class="increase">+</button>
-                        </div>
-                       </div>
-
-                       <div class="menu_right">
-                        <span>$29.99</span>
-                        <button class = "remove_btn">Remove</button>
-                       </div>
-
-                    </div>
-                </div> -->
             </div>
         </div>
-        <div class="show_total"></div>
+        <div class="show_total">
+            <h1 id="total_price">0</h1>
+        </div>
     </aside>
 
     <div class="container">
 
     </div>
 
-
-
-    <script src="./cart.js"></script>
     <script src="./components/db.js"></script>
     <script src="./components/Item.js"></script>
+    <script src="./components/CartItem.js"></script>
+    <script src="./lib/utils.js"></script>
     <script src="./index.js"></script>
 </body>
 
